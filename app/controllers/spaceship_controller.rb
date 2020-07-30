@@ -1,5 +1,6 @@
 class SpapceshipsController < ApplicationController
-	before_action :authenticate_user!
+	before_action :set_spaceship, only: [:show, :update, :destroy, :edit] 
+	skip_before_action :authenticate_user!, only: :home, :index, :show
 
     def index
       @spaceships = Spaceship.all
@@ -18,8 +19,7 @@ class SpapceshipsController < ApplicationController
 		end
 	end
 
-		def show
-			@spaceship = Spaceship.show
+		def show			
 		end
 
 		def update
@@ -28,5 +28,23 @@ class SpapceshipsController < ApplicationController
 			else
 				render 'edit'
 			end
+		end
+
+		def edit
+		end
+
+		def destroy
+			@spaceship.destroy
+			redirect_to spaceship_path
+		end
+
+		private
+
+		def set_spaceship
+			@spaceship = Spaceship.find(params[:id])
+		end
+
+		def spaceship_params
+			params.require(:spaceship).permit(:model)
 		end
 
