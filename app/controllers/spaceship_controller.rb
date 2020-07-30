@@ -19,7 +19,7 @@ class SpapceshipsController < ApplicationController
 	end
 
 		def show
-		@spaceship = Spaceship.show
+			@spaceship = Spaceship.show
 		end
 
 		def update
