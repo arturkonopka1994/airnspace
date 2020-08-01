@@ -15,4 +15,10 @@ class BookingsController < ApplicationController
 	def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-  end
+	end
+	
+	private
+	def spaceship_params
+		params.require(:spaceship).permit(:model, :fuel_type, :capacity, :cost, :currency, :location, :captain_name, :date_of_production)
+	end
+
