@@ -1,5 +1,10 @@
 class ReviewsController < ApplicationController
-    def create
+  
+  def new
+    @spaceship = Spaceship.new
+  end  
+  
+  def create
       @spaceship = Spaceship.find(params[:reviews_id])
       @review = Review.new(review_params)
       @review.spaceship = @spaceship
