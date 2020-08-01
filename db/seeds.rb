@@ -11,11 +11,11 @@ CURRENCY_TYPE = ["GBP", "USD", "EURO"]
 10.times do
   Spaceship.create(
     model: SPACESHIP_MODELS.sample,
-    fuel: Faker::Vehicle.fuel_type,
+    fuel_type: Faker::Vehicle.fuel_type,
     capacity: rand(1..5),
     currency: CURRENCY_TYPE.sample,
     location: Faker::Address.postcode,
-    captain: Faker::Name.name,
+    captain_name: Faker::Name.name,
     date_of_production: Faker::Vehicle.year,
   )
 end
