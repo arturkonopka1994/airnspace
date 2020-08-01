@@ -47,4 +47,3 @@ class SpapceshipsController < ApplicationController
 		def spaceship_params
 			params.require(:spaceship).permit(:model)
 		end
-
