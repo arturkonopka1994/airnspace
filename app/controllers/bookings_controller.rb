@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
 	end
 	
 	private
-		def spaceship_params
-			params.require(:spaceship).permit(:model, :fuel, :capaciy, :cost, :currency, :location, :captain, :year_of_production)
-		end
+	def spaceship_params
+		params.require(:spaceship).permit(:model, :fuel_type, :capacity, :cost, :currency, :location, :captain_name, :date_of_production)
+	end
 
