@@ -6,6 +6,9 @@ class SpaceshipsController < ApplicationController
 		@spaceships = Spaceship.all
 	end
 
+	def show	
+	end
+
 	def new
 		@spaceship = Spaceship.new
 	end
@@ -19,23 +22,20 @@ class SpaceshipsController < ApplicationController
 		end
 	end
 
-	def show	
+	def edit
 	end
 
 	def update
-		if @spaceship.update(spaceship.params)
-			redirect_to spaceship_path
+		if @spaceship.update(spaceship_params)
+			redirect_to spaceship_path(@spaceship)
 		else
 			render 'edit'
 		end
 	end
 
-	def edit
-	end
-
 	def destroy
 		@spaceship.destroy
-		redirect_to spaceship_path
+		redirect_to spaceships_path
 	end
 
 	private
