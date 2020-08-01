@@ -1,8 +1,8 @@
 <h1>Review</h1>
 
-<%= simple_form_for(@spaceship) do |f| %>
-<%= f.input :desription %>
-<%= f.input :rating %>
-<%= f.submit %>
-<% end %>
-<%= link_to 'Back', spaceships_path %>
+<%= simple_form_for [@spaceship, @review] do |f| %>
+  <%= f.input :description %>
+  <%= f.input :rating %>
+  <%= f.submit %>
+  <% end %>
+<%= link_to 'Back', spaceship_path(@spaceship) %>
