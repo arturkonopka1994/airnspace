@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_08_01_153059) do
     t.string "currency"
     t.string "location"
     t.string "captain_name"
-    t.date "date_of_production"
+    t.integer "date_of_production"
     t.index ["user_id"], name: "index_spaceships_on_user_id"
   end
 

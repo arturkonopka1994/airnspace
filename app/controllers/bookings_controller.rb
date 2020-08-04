@@ -1,11 +1,15 @@
 class BookingsController < ApplicationController
-  def new
+	def new
+		@spaceship = Spaceship.find(params[:spaceship_id])
 		@booking = Booking.new
 	end
 		
 	def create
+		@spaceship = Spaceship.find(params[:spaceship_id])
 		@booking = Booking.new(booking_params)
-		if @booking.save
+		@booking.spaceship = @spaceship
+		@booking.user = current_user
+		if @booking.save!
 			redirect_to spaceship_path(@spaceship)
 		else
 			render 'new'
@@ -19,8 +23,9 @@ class BookingsController < ApplicationController
 	end
 	
 	private
-	def spaceship_params
-		params.require(:spaceship).permit(:model, :fuel_type, :capacity, :cost, :currency, :location, :captain_name, :date_of_production)
+
+	def booking_params
+		params.require(:booking).permit(:start_date, :end_date)
 	end
 end
 
