@@ -1,8 +1,22 @@
+<div class="container">
+  <h1><%= @spaceship.model %></h1> 
+  <div>
+    <%= image_tag url="https://source.unsplash.com/500x400/?spaceships" %>
+  </div>
+  <div>
+    <h2>Spaceship Description</h2>
+    <p>
+      This ship has a capacity of <%= @spaceship.capacity %>.
+      It costs <%= @spaceship.currency %> <%= @spaceship.cost %>.
+      Its location is <%= @spaceship.location %>.
+      The captain of the ship is <%= @spaceship.captain_name %>.
+    </p>
+  </div>
 
-<h1><%= @spaceship.model %></h1> 
+  <%= link_to 'Book spaceship', new_spaceship_booking_path(@spaceship) %>
+  <%= link_to 'Reviews', new_spaceship_review_path(@spaceship) %>
+  <%= link_to 'Back', spaceships_path %>
 
+</div>
 
-<%= link_to 'Book spaceship', new_spaceship_booking_path(@spaceship) %>
-<%= link_to 'Reviews', new_spaceship_review_path(@spaceship) %>
-
-<%= link_to 'Back', spaceships_path %>
+<%# @spaceship.capacity,  @spaceship.cost, @spaceship.currency, @spaceship.location, @spaceship.captain_name %>
