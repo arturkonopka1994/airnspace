@@ -1,0 +1,33 @@
+<h1>Hello <%= current_user.first_name %></h1>
+<div class="container">
+  <h2>Spaceships</h2>
+  <div class="row">
+    <% current_user.spaceships.each do |spaceship| %>
+      <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
+        <div class="card">
+          <%= spaceship.model %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <h2>Booked Spaceships</h2>
+  <div class="row">
+    <% current_user.booked_spaceships.each do |spaceship| %>
+      <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
+        <div class="card">
+          <%= spaceship.model %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <h2>Booking</h2>
+  <div class="row">
+    <% current_user.bookings.each do |booking| %>
+      <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
+        <div class="card">
+          <%= spaceship.user.email %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

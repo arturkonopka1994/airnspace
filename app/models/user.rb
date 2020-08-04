@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :spaceships, dependent: :destroy
-  has_many :spaceships, through: :booking
+  has_many :booked_spaceships, through: :bookings, source: :spaceship 
 end
