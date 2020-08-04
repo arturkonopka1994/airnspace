@@ -1,9 +1,18 @@
-<h1>All spaceships</h1>
-<ul>
-  <% @spaceships.each do |spaceship| %>
-    <li><%= link_to spaceship.model, spaceship_path(spaceship) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1 class="text-center">All spaceships</h1>
+  <ul>
+    <div class="cards">
+        <% @spaceships.each do |spaceship| %>
+          <div class="card" style="width: 402px;">
+            <%= image_tag url="https://source.unsplash.com/500x400/?spaceships" %>
+            <div class="card-body">
+              <h2 class="card-title"><%= link_to spaceship.model, spaceship_path(spaceship) %></h2>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </ul>
 
-<%= link_to 'New', new_spaceship_path %>
-<%= link_to 'Back to Homepage', root_path %>
+  <%= link_to 'New', new_spaceship_path %>
+  <%= link_to 'Back to Homepage', root_path %>
+</div>
