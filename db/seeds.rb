@@ -18,6 +18,7 @@ puts "creating spaceships"
     model: SPACESHIP_MODELS.sample,
     fuel_type: Faker::Vehicle.fuel_type,
     capacity: rand(1..5),
+    cost: rand(100000..1000000),
     currency: CURRENCY_TYPE.sample,
     location: Faker::Address.postcode,
     captain_name: Faker::Name.name,
