@@ -8,11 +8,12 @@ class ReviewsController < ApplicationController
       @spaceship = Spaceship.find(params[:spaceship_id])
       @review = Review.new(review_params)
       @review.spaceship = @spaceship
-      if @review.save
+      @review.user = current_user
+      if @review.save!
         redirect_to spaceship_path(@spaceship)
       else
         @spaceship = Spaceship.new
-        render "reviews/show"
+        render "spaceship/show"
       end
     end
 
