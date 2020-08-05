@@ -1,8 +1,11 @@
-<h1>Review</h1>
+<div class="container">
+  <h1>Review</h1>
 
-<%= simple_form_for [@spaceship, Review.new] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :rating, collection: 0..5 %>
-  <%= f.submit class: "btn btn-primary" %>
-  <% end %>
-<%= link_to 'Back', spaceship_path(@spaceship), class: "btn btn-primary" %>
+  <%= simple_form_for [@spaceship, Review.new] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5] %>
+    <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  <%= link_to 'Back', spaceship_path(@spaceship), class: "btn btn-primary" %>
+
+</div>
