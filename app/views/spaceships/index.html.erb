@@ -1,18 +1,25 @@
 <div class="container">
-  <h1 class="text-center">All spaceships</h1>
-  <ul>
-    <div class="cards">
-        <% @spaceships.each do |spaceship| %>
-          <div class="card" style="width: 402px;">
-            <%= image_tag url="https://source.unsplash.com/500x400/?spaceships" %>
-            <div class="card-body">
-              <h2 class="card-title"><%= link_to spaceship.model, spaceship_path(spaceship) %></h2>
-            </div>
+  <div class="row">
+    <div class="col text-left">
+      <%= link_to 'New', new_spaceship_path, class: "btn btn-primary" %>
+    </div>
+    <h1 class="text-center">All spaceships</h1>
+    <div class="col text-right">
+      <%= link_to 'Back to Homepage', root_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  
+  <div class="cards">
+      <% @spaceships.each do |spaceship| %>
+        <div class="card" style="width: 400px">
+          <%= image_tag url="https://source.unsplash.com/500x400/?spaceships" %>
+          <div class="card-body">
+            <h2 class="card-title"><%= link_to spaceship.model, spaceship_path(spaceship) %></h2>
           </div>
-        <% end %>
-      </div>
-  </ul>
+        </div>
+      <% end %>
+  </div>
 
-  <%= link_to 'New', new_spaceship_path %>
-  <%= link_to 'Back to Homepage', root_path %>
+  
+  
 </div>
