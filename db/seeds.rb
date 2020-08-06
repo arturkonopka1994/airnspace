@@ -7,20 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 SPACESHIP_MODELS = ["SPACEX", "BOEING", "ORBITAL SCIENCES", "SIERRA NEVADA CORPORATION",
 "VIRGIN GALACTIC", "XCOR AEROSPACE", "MADE IN SPACE", "AD ASTRA ROCKET COMPANY", "PLANETARY RESOURCES", "AIRBUS DEFENCE & SPACE"]
-CURRENCY_TYPE = ["GBP", "USD", "EURO"]
+CURRENCY_TYPE = ["£", "$", "€"]
 puts "creating user"
 user = User.create(email:"stachugalon@gmail.com", password: "123456")
 puts "user created"
 
 puts "creating spaceships"
-10.times do
+9.times do
   Spaceship.create!(user: user,
     model: SPACESHIP_MODELS.sample,
     fuel_type: Faker::Vehicle.fuel_type,
     capacity: rand(1..5),
     cost: rand(100000..1000000),
     currency: CURRENCY_TYPE.sample,
-    location: Faker::Address.postcode,
+    location: Faker::Address.country_by_code,
     captain_name: Faker::Name.name,
     date_of_production: Faker::Vehicle.year
   )
