@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @spaceship.model %></h1> 
-  <div>
+  <div class="col-xs-12 col-sm-4">
     <%= image_tag url="https://source.unsplash.com/500x400/?spaceships" %>
   </div>
   <div>
@@ -33,10 +33,11 @@
     </ul>
   <% end %>
 
-  <%= link_to 'Book spaceship', new_spaceship_booking_path(@spaceship) %>
-  <%= link_to 'Create New Review', new_spaceship_review_path(@spaceship) %>
+  <%= link_to 'Book spaceship', new_spaceship_booking_path(@spaceship), class: "btn btn-success" %>
+  
+  <%= link_to 'Create New Review', new_spaceship_review_path(@spaceship), class: "btn btn-secondary" %>
 
-  <%= link_to 'Back', spaceships_path %>
+  <%= link_to 'Back', spaceships_path, class: "btn btn-dark" %>
 </div>
 
 

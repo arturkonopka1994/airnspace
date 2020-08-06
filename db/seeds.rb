@@ -5,9 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 SPACESHIP_MODELS = ["SPACEX", "BOEING", "ORBITAL SCIENCES", "SIERRA NEVADA CORPORATION",
 "VIRGIN GALACTIC", "XCOR AEROSPACE", "MADE IN SPACE", "AD ASTRA ROCKET COMPANY", "PLANETARY RESOURCES", "AIRBUS DEFENCE & SPACE"]
 CURRENCY_TYPE = ["£", "$", "€"]
+
+puts "destroying current records"
+User.destroy_all
+Spaceship.destroy_all
 puts "creating user"
 user = User.create(email:"stachugalon@gmail.com", password: "123456")
 puts "user created"
