@@ -13,6 +13,28 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div>
+      <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);">
+        <div class="container">
+          <h1>AIR'N'SPACE!</h1>
+          <% unless current_page?("/spaceships") %>
+            <%= link_to 'Spaceships', spaceships_path, class:"btn btn-secondary" %>
+          <% end %>
+        </div>
+      </div>
+      <%= yield %>
+      <div class="footer text-center">
+        <div class="links">
+          <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-fw fa-github"></i></a>
+          <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+          <p>This website was coded by Artur, Matt, Rida & Francois <i class="fas fa-space-shuttle"></i></p>
+        </div>
+      </div>
+    </div>
+    
+    
+    
   </body>
 </html>
