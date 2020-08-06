@@ -1,33 +1,40 @@
-<h1>Hello <%= current_user.first_name %></h1>
 <div class="container">
-  <h2>Spaceships</h2>
-  <div class="row">
-    <% current_user.spaceships.each do |spaceship| %>
-      <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
-        <div class="card">
-          <%= spaceship.model %>
+  <h1>
+    Hello <%= current_user.email %>
+  </h1>
+
+  <div>
+    <h2>Booked Spaceships</h2>
+    <div class="row">
+      <% current_user.booked_spaceships.each do |spaceship| %>
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
+          <div class="card">
+            <p>Model: <%= spaceship.model %></p>
+            <h4>Ship details :</h4>
+            <p>
+              This ship has a capacity of <%= spaceship.capacity %>.
+              Its location is <%= spaceship.location %>.
+              The captain of the ship is <%= spaceship.captain_name %>.
+            </p>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-  <h2>Booked Spaceships</h2>
-  <div class="row">
-    <% current_user.booked_spaceships.each do |spaceship| %>
-      <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
-        <div class="card">
-          <%= spaceship.model %>
+      <% end %>
+    </div>
+
+    <h2>Booked Dates</h2>
+    <div class="row">
+      <% current_user.bookings.each do |booking| %>
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
+          <div class="card">
+           <p>
+              Start date: <%= booking.start_date%>
+              <br>
+              End date: <%= booking.end_date %>
+           </p>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-  <h2>Booking</h2>
-  <div class="row">
-    <% current_user.bookings.each do |booking| %>
-      <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
-        <div class="card">
-          <%= booking.user.email %>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+
