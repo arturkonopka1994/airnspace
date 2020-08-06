@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 300px 0;
+}
+
+.banner h1 {
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+  border-top: 1px solid #DDDDDD !important;
+  background-color: #c4c6c9;
+}
+
+.footer a {
+  font-size: 20px;
+  color:  #BF1013;
+}
+
+.footer p {
+  color: #6B6C6C;
+}
+
+.footer .fas {
+  color: #BF0F12;
+}
