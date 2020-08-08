@@ -12,22 +12,22 @@ CURRENCY_TYPE = ["£", "$", "€"]
 puts "destroying current records"
 User.destroy_all
 Spaceship.destroy_all
-puts "creating user"
-user = User.create(email:"stachugalon@gmail.com", password: "123456")
-puts "user created"
+# puts "creating user"
+# user = User.create(email:"stachugalon@gmail.com", password: "123456")
+# puts "user created"
 
-puts "creating spaceships"
-10.times do
-  Spaceship.create!(user: user,
-    model: SPACESHIP_MODELS.sample,
-    fuel_type: Faker::Vehicle.fuel_type,
-    capacity: rand(1..5),
-    cost: rand(100000..1000000),
-    currency: CURRENCY_TYPE.sample,
-    location: Faker::Address.country_by_code,
-    captain_name: Faker::Name.name,
-    date_of_production: Faker::Vehicle.year
-  )
-  puts "Spaceship created"
-end
-puts "Spaceships created"
+# puts "creating spaceships"
+# 10.times do
+#   Spaceship.create!(user: user,
+#     model: SPACESHIP_MODELS.sample,
+#     fuel_type: Faker::Vehicle.fuel_type,
+#     capacity: rand(1..5),
+#     cost: rand(100000..1000000),
+#     currency: CURRENCY_TYPE.sample,
+#     location: Faker::Address.country_by_code,
+#     captain_name: Faker::Name.name,
+#     date_of_production: Faker::Vehicle.year
+#   )
+#   puts "Spaceship created"
+# end
+# puts "Spaceships created"
