@@ -1,11 +1,13 @@
-<h1>New Spaceship</h1>
-<%= simple_form_for(@spaceship) do |f| %>
-<%= f.input :model %>
-<%= f.input :capacity %>
-<%= f.input :cost %>
-<%= f.input :currency %>
-<%= f.input :location %>
-<%= f.input :captain_name %>
-<%= f.submit %>
-<% end %>
-<%= link_to 'Back', spaceships_path %>
+<div class="container">
+  <h1>New Spaceship</>
+  <%= simple_form_for(@spaceship) do |f| %>
+  <%= f.input :model %>
+  <%= f.input :capacity %>
+  <%= f.input :cost %>
+  <%= f.input :currency %>
+  <%= f.input :location %>
+  <%= f.input :captain_name %>
+  <%= f.submit %>
+  <% end %>
+  <%= link_to 'Back', spaceships_path %>
+</div>
