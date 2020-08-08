@@ -30,6 +30,101 @@
   color: #BF0F12;
 }
 
+.header {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.header h1 {
+  font-size: 48px;
+  color: white;
+}
+
+.btn-xl {
+  font-size: 24px;
+  border-radius: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+form {
+  position: relative;
+  width: 20rem;
+  background: #57bd84;
+  border-radius: .7rem;
+}
+input, button {
+  height: 2rem;
+  font-family: 'Lato', sans-serif;
+  border: 0;
+  color: white;
+  font-size: 1.3rem;
+}
+input[type="search"] {
+  outline: 0;
+  width: 100%;
+  background: #fff;
+  padding: 0 1.6rem;
+  border-radius: .7rem;
+  appearance: none;
+  transition: all .3s cubic-bezier(0, 0, 0.43, 1.49);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+button {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  font-weight: bold;
+  background: #596267;
+  border-radius: 0 .7rem .7rem 0;
+}
+input:not(:placeholder-shown) {
+  border-radius: .7rem 0 0 .7rem;
+  width: calc(100% - 6rem);
+  + button {
+    display: block;
+  }
+}
+label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.searchbar {
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  z-index: 10;
+  margin: 30px;
+  padding: 0;
+  border: 30px;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  display: block;
+}
+
+.container {
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.title_mid {
+  text-align: center;
+  margin-top: 30px;
+}
+
 html {
   scroll-behavior: smooth;
 }
