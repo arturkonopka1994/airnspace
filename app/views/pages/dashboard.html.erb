@@ -1,14 +1,14 @@
 <div class="container">
-  <h1>
+  <h1 class="heading">
     Hello, <%= current_user.email_or_first_name %>
   </h1>
 
-  <div>
+  <div class="booked-spaceship">
     <h2>Booked Spaceships</h2>
     <div class="row">
       <% current_user.booked_spaceships.each do |spaceship| %>
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
-          <div class="card">
+        <div class="col-md-12">
+          <div class="dashboard-card">
             <p>Model: <%= spaceship.model %></p>
             <h4>Ship details :</h4>
             <p>
@@ -24,7 +24,7 @@
     <h2>Booked Dates</h2>
     <div class="row">
       <% current_user.bookings.each do |booking| %>
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
+        <div class="col-md-12">
           <div class="card">
            <p>
               Start date: <%= booking.start_date%>

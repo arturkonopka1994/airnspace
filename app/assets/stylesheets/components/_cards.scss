@@ -3,3 +3,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
+
+.dashboard-card {
+  background: linear-gradient(-225deg, rgba(30,30,30,0.6) 30%, rgba(46,46,46,0.5) 80%), url("http://unsplash.it/400/300/?spaceship");
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
