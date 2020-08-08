@@ -4,9 +4,7 @@
 <%= f.input :capacity %>
 <%= f.input :cost %>
 <%= f.input :currency, collection: [ "£", "$", "€" ] %>
-<%# <div class="form-group select optional"> %>
-<%= f.country_select :location, {style: "width: 100%"} %>
-<%# </div> %>
+<%= f.country_select :location %>
 <%= f.input :captain_name %>
 <%= f.input :photo, as: :file %>
 <%= f.submit %>
