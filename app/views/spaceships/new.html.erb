@@ -6,7 +6,9 @@
   <%= f.input :capacity %>
   <%= f.input :cost %>
   <%= f.input :currency, collection: [ "£", "$", "€" ] %>
-  <%= f.country_select :location %>
+  <label class="select required" for="spaceship_location">Location *</label>
+  <%= f.country_select :location, {}, {class: 'form-control select optional'} %>
+  <br>
   <%= f.input :captain_name %>
   <%= f.input :photo, as: :file %>
   <%= f.submit %>
