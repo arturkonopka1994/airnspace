@@ -3,5 +3,10 @@ class Spaceship < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_one_attached :photo
-  validates :model, :capacity, presence: true
+  validates :model, :capacity, :cost, :currency, :location, :captain_name, presence: true
+
+  def country_name
+    country = ISO3166::Country[location]
+    country.translations[I18n.locale.to_s] || country.name
+  end
 end
