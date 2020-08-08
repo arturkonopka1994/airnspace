@@ -4,7 +4,7 @@
     <div class=searchbar>
         <form onsubmit="event.preventDefault();" role="search">
         <label for="search">Search for stuff</label>
-        <input id="search" type="search" placeholder="Search by location" autofocus required />
+        <input type="search" placeholder="Search by location" autofocus required />
         <button type="submit">Go</button>
         </form>
     </div>
@@ -33,46 +33,36 @@
     </div>
   </div>
   <div class="container">
-    <div class="row">
-      <div class="col-4">
-        <div class="card" style="width: 18rem;">
-          <%= image_tag "home001.jpeg", class:"card-img-top", alt:"spaceship_picture" %>
+    <div class="row justify-content-center">
+      
+        <div class="card m-4" style="width: 18rem;">
+          <%= image_tag "home001.jpeg", class:"card-img-top", alt:"spaceship_picture", height: "200px" %>
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
-      </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <%= image_tag "home002.jpeg", class:"card-img-top", alt:"spaceship_picture" %>
+      
+    
+      <div class="card m-4" style="width: 18rem;">
+        <%= image_tag "home002.jpeg", class:"card-img-top", alt:"spaceship_picture", height: "200px" %>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <%= image_tag "home003.jpeg", class:"card-img-top", alt:"spaceship_picture" %>
+    
+    
+      <div class="card m-4" style="width: 18rem;">
+        <%= image_tag "home003.jpeg", class:"card-img-top", alt:"spaceship_picture", height: "200px" %>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
-    </div>
+    
   </div>
 </div>
-
-  <div class="footer text-center">
-    <div class="links">
-      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-fw fa-github"></i></a>
-      <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-      <p>This website was coded by Artur, Matt, Rida & Francois <i class="fas fa-space-shuttle"></i></p>
-    </div>
-  </div>

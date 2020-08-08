@@ -12,6 +12,7 @@
   <h1 class="text-center">Current Spaceships for Rent</h1>
   <div class="row", style="width: 1200px">
       <% @spaceships.each do |spaceship| %>
+
         <div class="col-md-12 col-lg-4">
         
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path spaceship.photo.key, height: 300, width: 400, crop: :fill %>')">
@@ -19,6 +20,8 @@
               <h2 class="text-left"><%= spaceship.model.upcase %></h2>
               <p class="card-description-bottom " style="margin: 0"><%= spaceship.currency %><%= spaceship.cost %> per day</p>
               <p class="card-description-bottom-2" style="margin: 0"><%= spaceship.country_name %></p>
+
+
             </div>
             <%= link_to spaceship.model, spaceship_path(spaceship), class: 'card-link' %>
           </div>
