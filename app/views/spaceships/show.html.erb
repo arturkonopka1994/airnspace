@@ -1,14 +1,14 @@
 <div class="container">
   <h1><%= @spaceship.model %></h1> 
   <div class="col-xs-12 col-sm-4">
-    <%= image_tag url="https://source.unsplash.com/500x400/?spaceships" %>
+    <%= cl_image_tag @spaceship.photo.key ,height: 300, width: 400, crop: :fill %>
   </div>
   <div>
     <h2>Spaceship Description</h2>
     <p>
       This ship has a capacity of <%= @spaceship.capacity %>.
       It costs <%= @spaceship.currency %><%= @spaceship.cost %> .
-      Its location is <%= @spaceship.location %>.
+      The ship is located <%= @spaceship.country_name %>.
       The captain of the ship is <%= @spaceship.captain_name %>.
     </p>
   </div>
