@@ -7,5 +7,14 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :spaceships, dependent: :destroy
-  has_many :booked_spaceships, through: :bookings, source: :spaceship 
+  has_many :booked_spaceships, through: :bookings, source: :spaceship
+
+  def email_or_first_name
+    if first_name.present?
+      return first_name
+    else
+      return email
+    end
+  end
+
 end
