@@ -3,10 +3,13 @@
 <%= f.input :model %>
 <%= f.input :capacity %>
 <%= f.input :cost %>
-<%= f.input :currency %>
-<%= f.input :location %>
+<%= f.input :currency, collection: [ "£", "$", "€" ] %>
+<%# <div class="form-group select optional"> %>
+<%= f.country_select :location, {style: "width: 100%"} %>
+<%# </div> %>
 <%= f.input :captain_name %>
 <%= f.input :photo, as: :file %>
 <%= f.submit %>
 <% end %>
 <%= link_to 'Back', spaceships_path %>
+
