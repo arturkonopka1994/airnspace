@@ -1,2 +1,77 @@
+<div>
+  <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);">
+    <div class=searchbar>
+        <form onsubmit="event.preventDefault();" role="search">
+        <label for="search">Search for stuff</label>
+        <input id="search" type="search" placeholder="Search by location" autofocus required />
+        <button type="submit">Go</button>
+        </form>
+    </div>
+      <div class="header">
+        <h1>AIR'N'SPACE!</h1>
+        <p><%= link_to 'List of SpaceShips', spaceships_path, class:"btn-xl btn-secondary text-decoration-none" %></p>
+      </div>
+  </div>
 
+  <div class="title_mid">
+      <h2>What we do</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
+          dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.
+          Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor,
+          orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+          Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.
+          Pellentesque congue. Ut in risus volutpat libero pharetra tempor.
+          Cras vestibulum bibendum augue.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <%= image_tag "home001.jpeg", class:"card-img-top", alt:"spaceship_picture" %>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    <div class="col-4">
+      <div class="card" style="width: 18rem;">
+        <%= image_tag "home002.jpeg", class:"card-img-top", alt:"spaceship_picture" %>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card" style="width: 18rem;">
+        <%= image_tag "home003.jpeg", class:"card-img-top", alt:"spaceship_picture" %>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+  <div class="footer text-center">
+    <div class="links">
+      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-fw fa-github"></i></a>
+      <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+      <p>This website was coded by Artur, Matt, Rida & Francois <i class="fas fa-space-shuttle"></i></p>
+    </div>
+  </div>
