@@ -3,7 +3,13 @@
     <% if current_page?("/spaceships") %>
       <div class="header justify-content-center">
         <h1 id="header-text">AIR'N'SPACE!</h1>
-        <p><%= link_to 'Rent your spaceship', new_spaceship_path, class:"btn-xl btn-secondary text-decoration-none" %></p>
+        <a class="neon-button justify-content-center" href="<%= new_spaceship_path %>">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Rent your spaceship now!       
+        </a>
       </div>
     <% else %>
       <%= link_to 'Spaceships', spaceships_path, class:"btn btn-secondary" %>
