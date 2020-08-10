@@ -5,12 +5,19 @@
         <form onsubmit="event.preventDefault();" role="search">
         <label for="search">Search for stuff</label>
         <input type="search" placeholder="Search by location" autofocus required />
-        <button type="submit">Go</button>
+        <button type="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>
       <div class="header">
-        <h1>AIR'N'SPACE!</h1>
-        <p><%= link_to 'List of SpaceShips', spaceships_path, class:"btn-xl btn-secondary text-decoration-none" %></p>
+        <h1 id="header-text">AIR'N'SPACE!</h1>
+        <!-- <p><%= link_to 'Check out available spaceships', spaceships_path, class:"btn-xl btn-secondary text-decoration-none" %></p> -->
+        <a class="neon-button justify-content-center" href="<%= spaceships_path %>">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Check out available spaceships        
+        </a>
       </div>
   </div>
 

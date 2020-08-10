@@ -14,20 +14,24 @@
   padding-top: 24px !important;
   padding-bottom: 24px !important;
   border-top: 1px solid #DDDDDD !important;
-  background-color: #c4c6c9;
+  background-color: #a7ab85;
 }
 
 .footer a {
   font-size: 20px;
-  color:  #BF1013;
+  color:  white;
+}
+
+.footer a:hover {
+  color:  rgb(122, 122, 122);
 }
 
 .footer p {
-  color: #6B6C6C;
+  color: white;
 }
 
 .footer .fas {
-  color: #BF0F12;
+  color: white;
 }
 
 .header {
@@ -37,7 +41,8 @@
 
 .header h1 {
   font-size: 48px;
-  color: white;
+  color: #ffffff;
+  text-shadow: #FFF 0px 0px 2px, #FFF 0px 0px 15px, #FFF 0px 0px 25px, #a7ab85 0px 0px 25px, #a7ab85 0px 0px 25px, #a7ab85 0px 0px 25px, #a7ab85 0px 0px 25px, #a7ab85 0px 0px 25px;
 }
 
 .btn-xl {
@@ -54,16 +59,23 @@
   form {
     position: relative;
     width: 20rem;
-    background: #57bd84;
+    background: #596267;
     border-radius: .7rem;
   }
-  input, button {
+  input {
     height: 2rem;
     font-family: 'Lato', sans-serif;
     border: 0;
     color: black;
-    font-size: 1.3rem;
   }
+
+  button {
+    height: 2rem;
+    font-family: 'Lato', sans-serif;
+    border: 0;
+    color: white;
+  }
+
   input[type="search"] {
     outline: 0;
     width: 100%;
@@ -114,7 +126,6 @@
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  display: block;
 }
 
 .containera {
