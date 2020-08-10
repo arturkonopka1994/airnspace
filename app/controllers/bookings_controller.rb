@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 		@booking.spaceship = @spaceship
 		@booking.user = current_user
 		if @booking.save!
-			redirect_to spaceship_path(@spaceship)
+			redirect_to dashboard_path
 		else
 			render 'new'
 		end
