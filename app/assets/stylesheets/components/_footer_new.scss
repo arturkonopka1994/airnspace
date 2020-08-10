@@ -1,0 +1,33 @@
+.footer-new {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  margin-top: 12px;
+  position: fixed !important;
+}
+
+.footer-new {
+  text-align: center;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+  border-top: 1px solid #DDDDDD !important;
+  background-color: #a7ab85;
+}
+
+.footer-new a {
+  font-size: 20px;
+  color:  white;
+}
+
+.footer-new a:hover {
+  color:  rgb(122, 122, 122);
+}
+
+.footer-new p {
+  color: white;
+}
+
+.footer-new .fas {
+  color: white;
+}

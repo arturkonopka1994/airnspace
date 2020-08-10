@@ -1,0 +1,32 @@
+.footer-home {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  margin-top: 12px;
+}
+
+.footer-home {
+  text-align: center;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+  border-top: 1px solid #DDDDDD !important;
+  background-color: #a7ab85;
+}
+
+.footer-home a {
+  font-size: 20px;
+  color:  white;
+}
+
+.footer-home a:hover {
+  color:  rgb(122, 122, 122);
+}
+
+.footer-home p {
+  color: white;
+}
+
+.footer-home .fas {
+  color: white;
+}
