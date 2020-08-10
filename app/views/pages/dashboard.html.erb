@@ -2,43 +2,60 @@
 <br>
 <br>
 <div class="container">
-  <h1>
-    Hello, <%= current_user.email_or_first_name %>
-  </h1>
+  <br>
+  <br>
+  <br>
+  <br>
 
-  <div>
-    <h2>Booked Spaceships</h2>
-    <div class="row">
-      <% current_user.booked_spaceships.each do |spaceship| %>
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
-          <div class="card">
-            <p>Model: <%= spaceship.model %></p>
-            <h4>Ship details :</h4>
-            <p>
-              This ship has a capacity of <%= spaceship.capacity %>.
-              Its location is <%= spaceship.location %>.
-              The captain of the ship is <%= spaceship.captain_name %>.
-            </p>
-          </div>
-        </div>
-      <% end %>
-    </div>
+  <br>
+  <br>
+  <br>
 
-    <h2>Booked Dates</h2>
-    <div class="row">
-      <% current_user.bookings.each do |booking| %>
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
-          <div class="card">
-           <p>
-              Start date: <%= booking.start_date%>
-              <br>
-              End date: <%= booking.end_date %>
-           </p>
-          </div>
+
+
+
+
+    <h1>
+      Hello, <%= current_user.email_or_first_name %>
+    </h1>
+    <% if current_user.booked_spaceships.count == 0 %> 
+      <h1>Oops looks like you haven't booked anything yet.</h1>
+      <%= link_to 'Check out available SpaceShips', spaceships_path %>
+    <% else %>
+      <div>
+        <h2>Booked Spaceships</h2>
+        <div class="row">
+          <% current_user.booked_spaceships.each do |spaceship| %>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
+              <div class="card">
+                <p>Model: <%= spaceship.model %></p>
+                <h4>Ship details :</h4>
+                <p>
+                  This ship has a capacity of <%= spaceship.capacity %>.
+                  Its location is <%= spaceship.location %>.
+                  The captain of the ship is <%= spaceship.captain_name %>.
+                </p>
+              </div>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-  </div>
+
+        <h2>Booked Dates</h2>
+        <div class="row">
+          <% current_user.bookings.each do |booking| %>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
+              <div class="card">
+              <p>
+                  Start date: <%= booking.start_date%>
+                  <br>
+                  End date: <%= booking.end_date %>
+              </p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 </div>
 <div class="footer-new text-center">
   <div class="links">
