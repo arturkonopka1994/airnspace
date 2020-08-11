@@ -1,31 +1,66 @@
-<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);">
-  <div class="container">
-    <h1>AIR'N'SPACE!</h1>
-    <% if current_page?("/spaceships") %>
-      <%= link_to 'Rent your spaceship', new_spaceship_path, class:"btn btn-secondary" %>
-    <% else %>
+<div class="banner2" style="background-image: url(https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);">
+    <div class="container">
+      <% if current_page?("/spaceships") %>
+      <div class="header justify-content-center">
+        <h1 id="header-text">AIR'N'SPACE!</h1>
+        <a class="neon-button justify-content-center" href="<%= new_spaceship_path %>">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Rent your spaceship now! 
+        </a>
+      </div>
+      <% else %>
       <%= link_to 'Spaceships', spaceships_path, class:"btn btn-secondary" %>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 </div>
 <div class="container">
-  <h1 class="text-center">Current Spaceships for Rent</h1>
-  <div class="row", style="width: 1200px">
+    <h1 class="text-center">Current Spaceships for Rent</h1>
+    <div class="row justify-content-center">      
+    <div class="container-cards">
       <% @spaceships.each do |spaceship| %>
-
-        <div class="col-md-12 col-lg-4">
-        
-          <div class="cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path spaceship.photo.key, height: 300, width: 400, crop: :fill %>')">
-            <div class="card-description" style="width: 90%; height: 90%">
-              <h2 class="text-left"><%= spaceship.model.upcase %></h2>
-              <p class="card-description-bottom " style="margin: 0"><%= spaceship.currency %><%= spaceship.cost %> per day</p>
-              <p class="card-description-bottom-2" style="margin: 0"><%= spaceship.country_name %></p>
-
-
+        <div class="box">
+          <div class="imgBx">
+            <img src="<%= cl_image_path spaceship.photo.key, height: 300, width: 400, crop: :fill %>" alt="">
+          </div>
+          <div class="contentBx">
+            <div>
+              <%= link_to spaceship.model, spaceship_path(spaceship), class: 'card-link' %>
+              <h2><%= spaceship.model.upcase %></h2>
+              <p><%= spaceship.currency %><%= spaceship.cost %> per day</p>
+              <p><%= spaceship.country_name %></p>
             </div>
-            <%= link_to spaceship.model, spaceship_path(spaceship), class: 'card-link' %>
           </div>
         </div>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="footer-home text-center">
+  <div class="links">
+    <a href="https://www.facebook.com/"><i class="fab fa-fw fa-facebook-f"></i></a>
+    <a href="https://github.com/arturkonopka1994/airnspace"><i class="fab fa-fw fa-github"></i></a>
+    <a href="https://twitter.com/"><i class="fab fa-fw fa-twitter"></i></a>
+    <a href="https://www.instagram.com/"><i class="fab fa-fw fa-instagram"></i></a>
+    <p>This website was coded by Artur, Matt, Rida & Francois <i class="fas fa-space-shuttle"></i></p>
   </div>
 </div>

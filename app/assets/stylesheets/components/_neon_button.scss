@@ -1,0 +1,84 @@
+.neon-button {
+  text-align: center;
+  line-height: 64px;
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  text-shadow: #FFF 0px 0px 2px, #FFF 0px 0px 15px, #FFF 0px 0px 25px, #a7ab85 0px 0px 25px, #a7ab85 0px 0px 25px, #a7ab85 0px 0px 25px, #a7ab85 0px 0px 25px, #a7ab85 0px 0px 25px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none !important;
+  font-size: 24px;
+  overflow: hidden;
+  transition: 0.2s;
+  height: 64px;
+  width: 700px;
+}
+
+.neon-button:hover {
+  color: white;
+  background: #a7ab85;
+  text-shadow: none;
+  box-shadow: 0 0 10px #a7ab85, 0 0 40px #a7ab85, 0 0 80px #a7ab85;
+  transition-delay: 1s;
+}
+
+.neon-button span {
+  position: absolute;
+  display: block;
+}
+
+.neon-button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #a7ab85 );
+}
+
+.neon-button:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+.neon-button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #a7ab85 );
+}
+
+.neon-button:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+.neon-button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #a7ab85 );
+}
+
+.neon-button:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+.neon-button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #fd5d93 );
+}
+
+.neon-button:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
