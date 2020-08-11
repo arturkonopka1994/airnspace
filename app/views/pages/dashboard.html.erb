@@ -20,7 +20,7 @@
     </h1>
     <% if current_user.booked_spaceships.count == 0 %> 
       <h1>Oops looks like you haven't booked anything yet.</h1>
-      <%= link_to 'Check out available SpaceShips', spaceships_path %>
+      <%= link_to 'Check out available SpaceShips', spaceships_path, class: "btn btn-dark" %>
     <% else %>
       <div>
         <h2>Booked Spaceships</h2>
