@@ -1,6 +1,4 @@
-    <h1>
-      Hello, <%= current_user.email_or_first_name %>
-    </h1>
+   
     <% if current_user.booked_spaceships.count == 0 %> 
       <h1>Oops looks like you haven't booked anything yet.</h1>
       <%= link_to 'Check out available SpaceShips', spaceships_path, class: "btn btn-dark" %>
@@ -19,8 +17,9 @@
             <h4 class="model">Ship details :</h4>
             <p class="model">This ship has a capacity of <%= booking.spaceship.capacity %>. Its location is <%= booking.spaceship.location %> The captain of the ship is <%= booking.spaceship.captain_name %>.</p>
           </div>
+          <h2>Total: <%= (booking.end_date - booking.start_date).to_i * booking.spaceship.cost %></h2>
         <% end %>
-        <h2>Total:</h2>
+         
       </div>            
     </div>
   </div>
