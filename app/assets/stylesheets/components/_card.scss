@@ -50,3 +50,27 @@
     opacity: 0.1;
 }
 
+//dashboard css
+
+.hello {
+    margin-top: 100px;
+}
+
+.booked-spaceship {
+    margin-top: 50px;
+    margin-right: 100px;
+}
+
+.dashboard-card {
+    position: relative;
+    height: 250px;
+    background: linear-gradient(-225deg, rgba(210, 212, 210, 0.6) 30%, rgba(210, 212, 210, 0.5) 80%);
+    background-size: cover;
+    color: black;
+    border-radius: 25px;
+    margin-right: 200px;   
+}
+
+.model {
+    padding-left: 20px;
+}
