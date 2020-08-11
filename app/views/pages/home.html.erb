@@ -1,5 +1,5 @@
 
-<div>
+
   <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);">
     <div class="searchbar" style="z-index: 0;">
         <form onsubmit="event.preventDefault();" role="search">
@@ -25,39 +25,21 @@
       <h2>We are opening up the skys for everyone!</h2>    
       <h2> We hope to provide a platform for the average person to experience their dreams.</h2>
   </div>
+
   <div class="container">
     <div class="row justify-content-center">
-      
-        <div class="card m-4" style="width: 18rem;">
-          <%= image_tag "home001.jpeg", class:"card-img-top", alt:"spaceship_picture", height: "200px" %>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      
-    
+      <% @spaceships.each do |spaceship| %>
       <div class="card m-4" style="width: 18rem;">
-        <%= image_tag "home002.jpeg", class:"card-img-top", alt:"spaceship_picture", height: "200px" %>
+        <%= cl_image_tag spaceship.photo.key, class:"card-img-top", :width=>300, :height=>200, :crop=>"fill" %>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title"><%= spaceship.model.upcase %></h5>
+          <p class="card-text"><%= spaceship.currency %><%= spaceship.cost %> per day</p>
+          <p class="card-text"><%= spaceship.country_name %></p>
+          <%= link_to 'Check it out', spaceship_path(spaceship), class: "btn btn-primary" %>
         </div>
       </div>
-    
-    
-      <div class="card m-4" style="width: 18rem;">
-        <%= image_tag "home003.jpeg", class:"card-img-top", alt:"spaceship_picture", height: "200px" %>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    
-  </div>
+      <% end %>
+    </div>
 </div>
 
 <div class="footer-home text-center">
