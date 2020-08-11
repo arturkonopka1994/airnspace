@@ -1,22 +1,21 @@
     
 
     <% if current_user.booked_spaceships.count == 0 %>
-      <br>
-      <br>
-      <div class="container">
+      
+      <div class="container push-footer">
         <h1>Hello, <%= current_user.email_or_first_name %></h1>
         <h1>Oops looks like you haven't booked anything yet.</h1>
         <%= cl_image_tag("https://mir-s3-cdn-cf.behance.net/project_modules/disp/fb647f64972709.5ae3ca25041dc.gif") %>
         
         <div style="padding-top: 14px">
-        <%= link_to 'Check out available SpaceShips', spaceships_path, class: "btn btn-dark" %>      
+        <%= link_to 'Check out available Spaceships', spaceships_path, class: "btn btn-dark" %>      
         </div>
       </div>
 
 
     <% else %>
 
-      <div class="container">
+      <div class="container push-footer">
         <h1 class="hello">Hello, <%= current_user.email_or_first_name %> this is your booking summary</h1>
         <div class="row">   
           <div class="col-md-12">
@@ -42,11 +41,11 @@
       </div>
     <% end %>
 
-<div class="footer-new text-center">
+<!-- <div class="footer-new text-center">
   <div class="links">
     <a href="https://www.facebook.com/"><i class="fab fa-fw fa-facebook-f"></i></a>
     <a href="https://github.com/arturkonopka1994/airnspace"><i class="fab fa-fw fa-github"></i></a>
     <a href="https://twitter.com/"><i class="fab fa-fw fa-twitter"></i></a>
     <a href="https://www.instagram.com/"><i class="fab fa-fw fa-instagram"></i></a>
     <p>This website was coded by Artur, Matt, Rida & Francois <i class="fas fa-space-shuttle"></i></p>
-  </div>
+</div> -->
