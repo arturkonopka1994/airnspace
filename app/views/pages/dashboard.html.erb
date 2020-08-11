@@ -1,31 +1,30 @@
 <div class="container">
-  <h1>
-    Hello, <%= current_user.email_or_first_name %>
-  </h1>
-
-  <div>
-    <h2>Booked Spaceships</h2>
-    <div class="row">
-      <% current_user.booked_spaceships.each do |spaceship| %>
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
-          <div class="card">
-            <p>Model: <%= spaceship.model %></p>
-            <h4>Ship details :</h4>
-            <p>
-              This ship has a capacity of <%= spaceship.capacity %>.
-              Its location is <%= spaceship.location %>.
-              The captain of the ship is <%= spaceship.captain_name %>.
-            </p>
+  <h1 class="hello">Hello, <%= current_user.email_or_first_name %> this is your booking summary</h1>
+  <div class="row">   
+    <div class="col-md-12">
+      <div class="dashboard-card">
+        <% current_user.bookings.each do |booking| %>
+          <div class="col-md-12">
+            <p>Start date: <%= booking.start_date%> End date: <%= booking.end_date %></p>
+          </div>  
+          <div class="new-name-here">
+            <p class="model">Model: <%= booking.spaceship.model %></p>
+            <h4 class="model">Ship details :</h4>
+            <p class="model">This ship has a capacity of <%= booking.spaceship.capacity %>. Its location is <%= booking.spaceship.location %> The captain of the ship is <%= booking.spaceship.captain_name %>.</p>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+        <h2>Total:</h2>
+      </div>            
     </div>
+  </div>
+</div>  
 
+    
+<!--    <div class="row">
     <h2>Booked Dates</h2>
-    <div class="row">
       <% current_user.bookings.each do |booking| %>
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-12">
-          <div class="card">
+        <div class="col-md-12">
+          <div class="dashboard-card">
            <p>
               Start date: <%= booking.start_date%>
               <br>
@@ -36,5 +35,5 @@
       <% end %>
     </div>
   </div>
-</div>
+</div>-->
 
