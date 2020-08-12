@@ -1,30 +1,26 @@
-<br>
-<br>
-<div class="container">
 
-  <h1>New Spaceship</h1>
-  <%= simple_form_for(@spaceship) do |f| %>
-  <%= f.input :model %>
-  <%= f.input :capacity %>
-  <%= f.input :cost %>
-  <%= f.input :currency, collection: [ "£", "$", "€" ] %>
-  <label class="select required" for="spaceship_location">Location *</label>
-  <%= f.country_select :location, {}, {class: 'form-control select optional'} %>
-  <br>
-  <%= f.input :captain_name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-  <% end %>
- 
+<div style="background-image: url(https://wallpapercave.com/wp/wp3837738.jpg); width: 100vw; margin-top:19px; margin-left: 0; margin-right: 0; background-repeat: no-repeat; background-size: auto; ">
+    <div class="container push-footer" style="color: white">
+
+      <h1 style="color:white; padding-top: 100px;">New Spaceship</h1>
+      <%= simple_form_for(@spaceship) do |f| %>
+      <%= f.input :model %>
+      <%= f.input :capacity %>
+      <%= f.input :cost %>
+      <%= f.input :currency, collection: [ "£", "$", "€" ] %>
+      <label class="select required" for="spaceship_location">Location *</label>
+      <%= f.country_select :location, {}, {class: 'form-control select optional'} %>
+      <br>
+      <%= f.input :captain_name %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, class: "btn-primary" %>
+      <%= link_to 'Back', spaceships_path, class: "btn btn-primary" %>
+      <% end %>
+      <br>
+    </div>
 </div>
 
-<div class="container">
-  <br>
-  <%= link_to 'Back', spaceships_path, class: "btn btn-dark" %>
-</div>
-
-
-<div class="footer-home text-center">
+<!--<div class="footer-home text-center" style="margin-top:0;">
   <div class="links">
     <a href="https://www.facebook.com/"><i class="fab fa-fw fa-facebook-f"></i></a>
     <a href="https://github.com/arturkonopka1994/airnspace"><i class="fab fa-fw fa-github"></i></a>
@@ -32,4 +28,4 @@
     <a href="https://www.instagram.com/"><i class="fab fa-fw fa-instagram"></i></a>
     <p>This website was coded by Artur, Matt, Rida & Francois <i class="fas fa-space-shuttle"></i></p>
   </div>
-</div>
+</div>-->
