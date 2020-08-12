@@ -12,25 +12,29 @@
     </div>
 
   <% else %>
-
-    <div class="container justify-content-center">
-      <h1 class="hello">Hello, <%= current_user.email_or_first_name %> this is your booking summary</h1>
-
-      <div class="row">
-        
+    
+    <div class="container">
+      <h1 class="hello">Hello, <%= current_user.email_or_first_name %> this is your booking summary</h1> 
+      
         <% current_user.bookings.each do |booking| %>
-          <div class="dashboard-card" style="width: 2000px">
-            <div class="col-md-12">
-              <h5>Start date: <%= booking.start_date%> End date: <%= booking.end_date %></h5>
-              <h5 class="model">Model: <%= booking.spaceship.model %></h5>
-              <h5 class="model">Ship details :</h5>
-              <p class="model">This ship has a capacity of <%= booking.spaceship.capacity %>. Its location is <%= booking.spaceship.location %> The captain of the ship is <%= booking.spaceship.captain_name %>.</p>
-              <h5>Total: <%= booking.spaceship.currency %><%= (booking.end_date - booking.start_date).to_i * booking.spaceship.cost %></h5>
-              <%= link_to "Delete booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger", style: "border-radius: 8px" %>
+          <div class="card-product">
+            <img src="<%= cl_image_path booking.spaceship.photo.key%>" alt="#" style="width: 250px; height: 250px; border-radius: 25px;">
+            <div class="card-product-infos">
+              <div class="col-md-12">
+                <div>
+                  <h5>Start date: <%= booking.start_date%> End date: <%= booking.end_date %></h5>
+                  <h5 class="model">Model: <%= booking.spaceship.model %></h5>
+                  <h5 class="model">Ship details :</h5>
+                  <p class="model">This ship has a capacity of <%= booking.spaceship.capacity %>. Its location is <%= booking.spaceship.location %> The captain of the ship is <%= booking.spaceship.captain_name %>.</p>
+                  <h5>Total: <%= booking.spaceship.currency %><%= (booking.end_date - booking.start_date).to_i * booking.spaceship.cost %></h5>
+                  <%= link_to "Cancel booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger", style: "border-radius: 8px" %>
+                </div>
+              </div>
             </div>
-          </div>
+            <br>
+          </div> 
           <br>
-        <% end %>        
+        <% end %>  
     </div>            
   <% end %>
 </div>
