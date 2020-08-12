@@ -28,7 +28,7 @@
               <p class="model">This ship has a capacity of <%= booking.spaceship.capacity %>. Its location is <%= booking.spaceship.location %> The captain of the ship is <%= booking.spaceship.captain_name %>.</p>
             </div>
 
-            <h2>Total: <%= (booking.end_date - booking.start_date).to_i * booking.spaceship.cost %></h2>
+            <h2>Total: <%= booking.spaceship.currency %><%= (booking.end_date - booking.start_date).to_i * booking.spaceship.cost %></h2>
 
             <div>
               <%= link_to "Delete booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
