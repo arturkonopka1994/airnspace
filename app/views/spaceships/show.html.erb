@@ -9,14 +9,13 @@
     <div class="container push-footer"> 
       <div class="col-xs-12 col-sm-4">
     </div>
-      <div class="text-center">
-        <h2>Spaceship Description</h2>
+      
+        <h2>Details</h2>
         <p> You can take <%= @spaceship.capacity %> people onboard </p>
         <p> It costs <%= @spaceship.currency %><%= @spaceship.cost %> per day</p>
         <p> The ship is located <%= @spaceship.country_name %>.
         <p> The captain of the ship is <%= @spaceship.captain_name %></p>
-      </div>
-
+      
       <h3>Reviews</h3>
       <% if @spaceship.reviews.empty? %>
         <p>Be the first to leave a review</p>
