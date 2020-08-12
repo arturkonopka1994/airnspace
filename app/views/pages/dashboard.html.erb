@@ -1,42 +1,37 @@
-    <% if current_user.booked_spaceships.count == 0 %>
+<div class="container">
+  <% if current_user.booked_spaceships.count == 0 %>
+    
+    <div class="container">
+      <h1>Hello, <%= current_user.email_or_first_name %></h1>
+      <h1>Oops looks like you haven't booked anything yet.</h1>
+      <%= cl_image_tag("https://mir-s3-cdn-cf.behance.net/project_modules/disp/fb647f64972709.5ae3ca25041dc.gif") %>
       
-      <div class="container push-footer">
-        <h1>Hello, <%= current_user.email_or_first_name %></h1>
-        <h1>Oops looks like you haven't booked anything yet.</h1>
-        <%= cl_image_tag("https://mir-s3-cdn-cf.behance.net/project_modules/disp/fb647f64972709.5ae3ca25041dc.gif") %>
-        
-        <div style="padding-top: 14px">
+      <div style="padding-top: 14px">
         <%= link_to 'Check out available Spaceships', spaceships_path, class: "btn btn-dark" %>      
-        </div>
       </div>
+    </div>
 
-    <% else %>
+  <% else %>
 
-      <div class="container push-footer">
-        <h1 class="hello">Hello, <%= current_user.email_or_first_name %> this is your booking summary</h1>
+    <div class="container justify-content-center">
+      <h1 class="hello">Hello, <%= current_user.email_or_first_name %> this is your booking summary</h1>
 
-        <div class="row">
-        <div class="dashboard-card">
-          <% current_user.bookings.each do |booking| %>
-
+      <div class="row">
+        
+        <% current_user.bookings.each do |booking| %>
+          <div class="dashboard-card" style="width: 2000px">
             <div class="col-md-12">
-              <p>Start date: <%= booking.start_date%> End date: <%= booking.end_date %></p>
-            </div>  
-
-            <div class="new-name-here">
-              <p class="model">Model: <%= booking.spaceship.model %></p>
-              <h4 class="model">Ship details :</h4>
+              <h5>Start date: <%= booking.start_date%> End date: <%= booking.end_date %></h5>
+              <h5 class="model">Model: <%= booking.spaceship.model %></h5>
+              <h5 class="model">Ship details :</h5>
               <p class="model">This ship has a capacity of <%= booking.spaceship.capacity %>. Its location is <%= booking.spaceship.location %> The captain of the ship is <%= booking.spaceship.captain_name %>.</p>
+              <h5>Total: <%= booking.spaceship.currency %><%= (booking.end_date - booking.start_date).to_i * booking.spaceship.cost %></h5>
+              <%= link_to "Delete booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger", style: "border-radius: 8px" %>
             </div>
-
-            <h2>Total: <%= booking.spaceship.currency %><%= (booking.end_date - booking.start_date).to_i * booking.spaceship.cost %></h2>
-
-            <div>
-              <%= link_to "Delete booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-            </div>
-          <% end %>
-        </div>
-      </div>            
-    <% end %>
-
+          </div>
+          <br>
+        <% end %>        
+    </div>            
+  <% end %>
+</div>
 
