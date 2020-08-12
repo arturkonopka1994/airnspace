@@ -5,7 +5,7 @@
       <div class="container ">
         <h1>Hello, <%= current_user.email_or_first_name %></h1>
         <h1>Oops looks like you haven't booked anything yet.</h1>
-        <%= cl_image_tag("https://mir-s3-cdn-cf.behance.net/project_modules/disp/fb647f64972709.5ae3ca25041dc.gif") %>
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/fb647f64972709.5ae3ca25041dc.gif" alt="">
         
         <div style="padding-top: 14px">
           <%= link_to 'Check out available Spaceships', spaceships_path, class: "btn btn-primary" %>      
