@@ -63,14 +63,14 @@
 
 .dashboard-card {
     position: relative;
-    height: 250px;
+    height: 260px;
     background: linear-gradient(-225deg, rgba(210, 212, 210, 0.6) 30%, rgba(210, 212, 210, 0.5) 80%);
     background-size: cover;
     color: black;
     border-radius: 25px;
-    margin-right: 200px;   
+    padding-top: 24px;  
 }
 
-.model {
-    padding-left: 20px;
-}
+// .model {
+//     padding-left: 20px;
+// }
