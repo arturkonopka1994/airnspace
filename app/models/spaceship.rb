@@ -9,4 +9,14 @@ class Spaceship < ApplicationRecord
     country = ISO3166::Country[location]
     country.translations[I18n.locale.to_s] || country.name
   end
+
+  def currency
+    if currency = 'dollar'
+      return '$'
+    elsif currency = 'pound'
+      return '£'
+    else 
+      return '€'
+  end
+end
 end
