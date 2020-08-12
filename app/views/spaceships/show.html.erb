@@ -1,51 +1,49 @@
 
-<div class="container-main">
+
   <div class="banner2" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @spaceship.photo.key %>');">
     <div class="banner-content">
       <h1 style= "color: white; font-size: 100px;"><%= @spaceship.model.upcase %></h1>
     </div>
   </div>
-
-  <div class="container push-footer"> 
-    <div class="col-xs-12 col-sm-4">
+  <div >
+    <div class="container push-footer"> 
+      <div class="col-xs-12 col-sm-4">
     </div>
-    <div>
-      <h2>Spaceship Description</h2>
-      <p> Capacity = <%= @spaceship.capacity %> </p>
-      <p> It costs <%= @spaceship.currency %><%= @spaceship.cost %> per day</p>
-      <p> The ship is located <%= @spaceship.country_name %>.
-      <p> The captain of the ship is <%= @spaceship.captain_name %></p>
+      <div>
+        <h2>Spaceship Description</h2>
+        <p> Capacity = <%= @spaceship.capacity %> </p>
+        <p> It costs <%= @spaceship.currency %><%= @spaceship.cost %> per day</p>
+        <p> The ship is located <%= @spaceship.country_name %>.
+        <p> The captain of the ship is <%= @spaceship.captain_name %></p>
+      </div>
+
+      <h3>Reviews</h3>
+      <% if @spaceship.reviews.empty? %>
+        <p>Be the first to leave a review</p>
+      <% else %>
+        <ul class="list-group" style="margin-bottom: 12px;">
+          <% @spaceship.reviews.each do |review| %>
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="list-style-type: none; background-color: transparent; border: 1px solid white; border-radius: 5px">
+              <span class="badge">
+                <% counter = 0 %>
+                <% 5.times do %>
+                  <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                  <% counter += 1 %>
+                <% end %>
+              </span>
+              <%= review.description %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <%= link_to 'Book spaceship', new_spaceship_booking_path(@spaceship), class: "btn btn-success" %>
+      
+      <%= link_to 'Create New Review', new_spaceship_review_path(@spaceship), class: "btn btn-secondary" %>
+
+      <%= link_to 'Back', spaceships_path, class: "btn btn-dark" %>
     </div>
-
-    <h3>Reviews</h3>
-    <% if @spaceship.reviews.empty? %>
-      <p>Be the first to leave a review</p>
-    <% else %>
-      <ul class="list-group" style="margin-bottom: 12px;">
-        <% @spaceship.reviews.each do |review| %>
-          <li class="list-group-item d-flex justify-content-between align-items-center" style="list-style-type: none;">
-            <span class="badge">
-              <% counter = 0 %>
-              <% 5.times do %>
-                <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-                <% counter += 1 %>
-              <% end %>
-            </span>
-            <%= review.description %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-
-    <%= link_to 'Book spaceship', new_spaceship_booking_path(@spaceship), class: "btn btn-success" %>
-    
-    <%= link_to 'Create New Review', new_spaceship_review_path(@spaceship), class: "btn btn-secondary" %>
-
-    <%= link_to 'Back', spaceships_path, class: "btn btn-dark" %>
   </div>
-
-
-</div>
 <!--
 <div class="footer-home text-center">
   <div class="links">
