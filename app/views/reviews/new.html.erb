@@ -9,9 +9,10 @@
           <%= f.input :description %>
           <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5] %>
           <%= f.submit class: "btn btn-primary" %>
+          <%= link_to 'Back', spaceship_path(@spaceship), class: "btn btn-primary" %>
           <% end %>
           <br>
-        <%= link_to 'Back', spaceship_path(@spaceship), class: "btn btn-primary" %>
+        
       </div>
     </div>
 </div>

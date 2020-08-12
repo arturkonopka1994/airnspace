@@ -9,9 +9,9 @@
     <div class="container push-footer"> 
       <div class="col-xs-12 col-sm-4">
     </div>
-      <div>
+      <div class="text-center">
         <h2>Spaceship Description</h2>
-        <p> Capacity = <%= @spaceship.capacity %> </p>
+        <p> You can take <%= @spaceship.capacity %> people onboard </p>
         <p> It costs <%= @spaceship.currency %><%= @spaceship.cost %> per day</p>
         <p> The ship is located <%= @spaceship.country_name %>.
         <p> The captain of the ship is <%= @spaceship.captain_name %></p>
@@ -23,7 +23,8 @@
       <% else %>
         <ul class="list-group" style="margin-bottom: 12px;">
           <% @spaceship.reviews.each do |review| %>
-            <li class="list-group-item d-flex justify-content-between align-items-center" style="list-style-type: none; background-color: transparent; border: 1px solid white; border-radius: 5px">
+            
+            <li class="list-group-item d-flex justify-content-between align-items-center" style="list-style-type: none; background-color: transparent; border: 1px solid white; border-radius: 5px;">
               <span class="badge">
                 <% counter = 0 %>
                 <% 5.times do %>
@@ -33,6 +34,9 @@
               </span>
               <%= review.description %>
             </li>
+            <%= review.user.email %>
+            <br>
+            <br>
           <% end %>
         </ul>
       <% end %>
