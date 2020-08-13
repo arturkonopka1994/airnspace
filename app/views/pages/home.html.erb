@@ -25,19 +25,22 @@
       <h2>We are opening up the skys for everyone!</h2>    
       <h2> We hope to provide a platform which can help people experience their dreams.</h2>
   </div>
-
-  <div class="container push-footer">
-    <div class="row justify-content-center" style="color:black">
-      <% @spaceships.each do |spaceship| %>
-        <div class="card m-4" style="width: 18rem;">
-          <%= cl_image_tag spaceship.photo.key, class:"card-img-top", :width=>300, :height=>200, :crop=>"fill" %>
-          <div class="card-body">
-            <h5 class="card-title"><%= spaceship.model.upcase %></h5>
-            <p class="card-text"><%= spaceship.currency %><%= spaceship.cost %> per day</p>
-            <p class="card-text"><%= spaceship.country_name %></p>
-            <%= link_to 'Check it out', spaceship_path(spaceship), class: "btn btn-dark" %>
+  <div class="title_mid">
+    <h2>Recently added</h2>
+    <div class="container push-footer">
+      <div class="row justify-content-center" style="color:black">
+        <% @spaceships.each do |spaceship| %>
+          <div class="card m-4" style="width: 18rem;">
+            <%= cl_image_tag spaceship.photo.key, class:"card-img-top", :width=>300, :height=>200, :crop=>"fill" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= spaceship.model.upcase %></h5>
+              <p class="card-text"><%= spaceship.currency %><%= spaceship.cost %> per day</p>
+              <p class="card-text"><%= spaceship.country_name %></p>
+              <%= link_to 'Check it out', spaceship_path(spaceship), class: "btn btn-dark" %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+  </div>
 </div>
